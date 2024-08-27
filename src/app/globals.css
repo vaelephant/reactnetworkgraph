@@ -8,14 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -26,8 +18,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.dark body {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
+/* 在全局样式文件或组件样式文件中添加 */
+.vis-button {
+  background-color: white; /* 确保按钮有背景色 */
+  border: 1px solid #ddd;  /* 添加边框以便更清晰 */
+  cursor: pointer;         /* 显示为可点击 */
+  padding: 5px;
 }
